@@ -3,7 +3,7 @@ package pl.edu.pwsztar.chess.dto;
 public enum FigureType {
     KING,
     QUEEN,
-    ROCK,
+    ROOK,
     BISHOP,
     KNIGHT,
     PAWN
