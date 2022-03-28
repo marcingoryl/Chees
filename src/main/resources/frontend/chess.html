@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
     <head>
         <meta charset="UTF-8"> 
         <title>chess</title>
-        <style type="text/css">
+
+        <style>
         body {
             background-image: url('https://i.stack.imgur.com/jGlzr.png');
         }
@@ -77,7 +79,7 @@
         <select id="chess">
             <option value="KING">Król</option>
             <option value="QUEEN">Królowa</option>
-            <option value="ROCK">Wieża</option>
+            <option value="ROOK">Wieża</option>
             <option value="BISHOP" selected>Goniec</option>
             <option value="KNIGHT">Konik</option>
             <option value="PAWN">Pionek</option>
@@ -192,7 +194,7 @@
             var figures = new Map();
             figures.set('KING', '<span id="figure">&#9812;</span>');
             figures.set('QUEEN', '<span id="figure">&#9813;</span>');
-            figures.set('ROCK', '<span id="figure">&#9814;</span>');
+            figures.set('ROOK', '<span id="figure">&#9814;</span>');
             figures.set('BISHOP', '<span id="figure">&#9815;</span>');
             figures.set('KNIGHT', '<span id="figure">&#9816;</span>');
             figures.set('PAWN', '<span id="figure">&#9817;</span>');
@@ -208,7 +210,7 @@
                 switch(chooseFigure) {
                     case 'KING':  $('#e_1').html(figures.get(chooseFigure)); break;
                     case 'QUEEN': $('#d_1').html(figures.get(chooseFigure)); break;
-                    case 'ROCK':  $('#a_1').html(figures.get(chooseFigure)); break;
+                    case 'ROOK':  $('#a_1').html(figures.get(chooseFigure)); break;
                     case 'BISHOP':  $('#c_1').html(figures.get(chooseFigure)); break;
                     case 'KNIGHT':  $('#b_1').html(figures.get(chooseFigure)); break;
                     case 'PAWN':  $('#d_2').html(figures.get(chooseFigure)); break;

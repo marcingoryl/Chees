@@ -1,6 +1,6 @@
 package pl.edu.pwsztar.chess.domain;
 
-interface RulesOfGame {
+public interface RulesOfGame {
 
     /**
      * Metoda zwraca true, tylko gdy przejscie z polozenia

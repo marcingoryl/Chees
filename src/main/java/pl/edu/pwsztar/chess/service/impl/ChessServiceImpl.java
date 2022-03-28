@@ -1,16 +1,20 @@
-package pl.edu.pwsztar.chess.domain;
+package pl.edu.pwsztar.chess.service.impl;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pl.edu.pwsztar.chess.domain.Point;
+import pl.edu.pwsztar.chess.domain.RulesOfGame;
 import pl.edu.pwsztar.chess.dto.FigureMoveDto;
+import pl.edu.pwsztar.chess.service.ChessService;
 
+@Service
 @Transactional
-public class ChessFacade {
-
+public class ChessServiceImpl implements ChessService {
     private RulesOfGame bishop;
     private RulesOfGame knight;
     // ...
 
-    public ChessFacade() {
+    public ChessServiceImpl() {
         bishop = new RulesOfGame.Bishop();
         knight = new RulesOfGame.Knight();
         // ...
