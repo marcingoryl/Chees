@@ -12,26 +12,48 @@ import pl.edu.pwsztar.chess.service.ChessService;
 public class ChessServiceImpl implements ChessService {
     private RulesOfGame bishop;
     private RulesOfGame knight;
+    private RulesOfGame king;
+    private RulesOfGame queen;
+    private RulesOfGame rook;
+    private RulesOfGame pawn;
+
     // ...
 
     public ChessServiceImpl() {
         bishop = new RulesOfGame.Bishop();
         knight = new RulesOfGame.Knight();
+        king = new RulesOfGame.King();
+        queen = new RulesOfGame.Queen();
+        rook = new RulesOfGame.Rook();
+        pawn = new RulesOfGame.Pawn();
         // ...
     }
 
     public boolean isCorrectMove(FigureMoveDto figureMoveDto) {
-
+        Point from = convert(figureMoveDto.getSource());
+        Point to = convert(figureMoveDto.getDestination());
         // refaktoryzacja?
         switch (figureMoveDto.getType()) {
             case BISHOP:
-                // wywolaj konwerter punktow oraz popraw ponizszy kod
-                return bishop.isCorrectMove(new Point(0, 0), new Point(1, 1));
+                return bishop.isCorrectMove(from, to);
             case KNIGHT:
-                // wywolaj konwerter punktow oraz popraw ponizszy kod
-                return knight.isCorrectMove(new Point(0, 0), new Point(1, 1));
+                return knight.isCorrectMove(from, to);
+            case KING:
+                return king.isCorrectMove(from, to);
+            case QUEEN:
+                return queen.isCorrectMove(from, to);
+            case ROOK:
+                return rook.isCorrectMove(from, to);
+            case PAWN:
+                return pawn.isCorrectMove(from, to);
         }
 
         return false;
+    }
+
+    public Point convert(String point) {
+        int x = point.charAt(0) - 'a' + 1;
+        int y = Character.getNumericValue(point.charAt(2));
+        return new Point(x, y);
     }
 }
