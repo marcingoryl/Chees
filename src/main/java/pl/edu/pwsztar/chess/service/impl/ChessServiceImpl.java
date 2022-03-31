@@ -32,7 +32,7 @@ public class ChessServiceImpl implements ChessService {
     public boolean isCorrectMove(FigureMoveDto figureMoveDto) {
         Point from = convert(figureMoveDto.getSource());
         Point to = convert(figureMoveDto.getDestination());
-        // refaktoryzacja?
+
         switch (figureMoveDto.getType()) {
             case BISHOP:
                 return bishop.isCorrectMove(from, to);
